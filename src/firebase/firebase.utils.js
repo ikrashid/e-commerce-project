@@ -39,7 +39,17 @@ const config = {
     }
   
 
-  
+ /* export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+    const collectionRef = firestore.collection(collectionKey);
+    const batch = firestore.batch();
+    objectsToAdd.forEach(obj => {
+      const newDocRef = collectionRef.doc(); //new document reference id
+      batch.set(newDocRef, obj); //batch so if one entry fails, all fail 
+    })
+
+    return await batch.commit(); //fires off our batch request 
+  }
+  */
 
   export const auth = firebase.auth();
   export const firestore = firebase.firestore();
